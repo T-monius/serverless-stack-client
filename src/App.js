@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import "./App.css";
 import Routes from "./Routes";
+import Nav from "react-bootstrap/Nav";
 
 function App() {
   return (
