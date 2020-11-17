@@ -1,4 +1,5 @@
 const config = {
+  STRIPE_KEY: "pk_test_51HnWH2JO5lOn2hKWd8ucXizNL6w9atrnHSFNjcJ6iYFwQtJuG7Sa8S9QcAM1gF6cBxdCohSziow957Ngnbxstnzu00WgwsEVqv",
   s3: {
     REGION: "us-east-1",
     BUCKET: "notes-app-upload-ridgeline",
