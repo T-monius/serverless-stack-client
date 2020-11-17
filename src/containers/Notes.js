@@ -2,6 +2,10 @@ import React, { useRef, useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { API, Storage } from "aws-amplify";
 import { onError } from "../libs/errorLib";
+import Form from "react-bootstrap/Form";
+import LoaderButton from "../components/LoaderButton";
+import config from "../config";
+import "./Notes.css";
 
 export default function Notes() {
   const file = useRef(null);
@@ -9,6 +13,8 @@ export default function Notes() {
   const history = useHistory();
   const [note, setNote] = useState(null);
   const [content, setContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     function loadNote() {
