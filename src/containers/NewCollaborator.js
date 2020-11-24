@@ -7,6 +7,7 @@ import LoaderButton from "../components/LoaderButton";
 import config from "../config";
 
 export default function NewCollaborator() {
+  const history = useHistory();
   const [content, setContent] = useState("");
 
   function validateForm() {
