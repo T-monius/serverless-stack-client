@@ -4,7 +4,6 @@ import { API } from "aws-amplify";
 import { onError } from "../libs/errorLib";
 import Form from "react-bootstrap/Form";
 import LoaderButton from "../components/LoaderButton";
-import config from "../config";
 
 export default function NewCollaborator() {
   const history = useHistory();
