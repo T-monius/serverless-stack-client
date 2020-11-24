@@ -33,30 +33,28 @@ export default function ShowCollaborationId() {
   }
 
   return (
-    {collaborationId ? (
-      <div>
-        <p>{collaborationId}</p>
-      </div>
-      ) :
-      (<div>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="content">
-            <Form.Control
-              type="input"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-            />
-          </Form.Group>
-          <LoaderButton
-            block
-            size="lg"
-            type="submit"
-            isLoading={false}
-            disabled={!validateForm()}
-          >
-            Save
-          </LoaderButton>
-        </Form>
-      </div>)
-  });
+    <div>
+      {collaborationId ? (
+          <p>{collaborationId}</p>
+        ) :
+          (<Form onSubmit={handleSubmit}>
+            <Form.Group controlId="content">
+              <Form.Control
+                type="input"
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              />
+            </Form.Group>
+            <LoaderButton
+              block
+              size="lg"
+              type="submit"
+              isLoading={false}
+              disabled={!validateForm()}
+            >
+              Save
+            </LoaderButton>
+          </Form>)}
+    </div>
+  );
 }
