@@ -32,13 +32,13 @@ export default function ShowCollaborationId() {
     setCollaborationId(retrievedId)
   }
 
-  return ({
-    collaborationId ?
+  return (
+    {collaborationId ? (
       <div>
         <p>{collaborationId}</p>
       </div>
-      :
-      <div>
+      ) :
+      (<div>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="content">
             <Form.Control
@@ -57,6 +57,6 @@ export default function ShowCollaborationId() {
             Save
           </LoaderButton>
         </Form>
-      </div>
+      </div>)
   });
 }
