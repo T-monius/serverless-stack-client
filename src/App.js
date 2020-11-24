@@ -67,6 +67,12 @@ function App() {
                   <LinkContainer to="/login">
                     <Nav.Link>Login</Nav.Link>
                   </LinkContainer>
+                  <LinkContainer to="/collaborators/new">
+                    <Nav.Link>Add a Collaborator</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/collaborators/show">
+                    <Nav.Link>Collaboration Info</Nav.Link>
+                  </LinkContainer>
                 </>
               )}
             </Nav>
