@@ -58,6 +58,12 @@ function App() {
                     <Nav.Link>Settings</Nav.Link>
                   </LinkContainer>
                   <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
+                  <LinkContainer to="/collaborators/new">
+                    <Nav.Link>Add a Collaborator</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/collaborators/show">
+                    <Nav.Link>Collaboration Info</Nav.Link>
+                  </LinkContainer>
                 </>
               ) : (
                 <>
@@ -66,12 +72,6 @@ function App() {
                   </LinkContainer>
                   <LinkContainer to="/login">
                     <Nav.Link>Login</Nav.Link>
-                  </LinkContainer>
-                  <LinkContainer to="/collaborators/new">
-                    <Nav.Link>Add a Collaborator</Nav.Link>
-                  </LinkContainer>
-                  <LinkContainer to="/collaborators/show">
-                    <Nav.Link>Collaboration Info</Nav.Link>
                   </LinkContainer>
                 </>
               )}
