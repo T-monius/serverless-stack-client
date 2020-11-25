@@ -13,7 +13,7 @@ export default function ShowCollaborationId() {
   }
 
   function getCollaborationId() {
-    return API.get("collaborators", `/collaborators`, {
+    return API.get("notes", "/collaborators", {
       body: "",
     });
   }
