@@ -15,7 +15,9 @@ export default function NewCollaborator() {
 
   function createCollaborator(collaboratorId) {
     return API.post("notes", "/collaborators", {
-      body: collaboratorId,
+      body: {
+       collaboratorId,
+      },
     });
   }
 
