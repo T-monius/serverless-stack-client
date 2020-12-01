@@ -33,11 +33,8 @@ export default function Routes() {
       <AuthenticatedRoute exact path="/notes/:id">
         <Notes />
       </AuthenticatedRoute>
-      <AuthenticatedRoute exact path="/collaborators/new">
+      <AuthenticatedRoute exact path="/collaborators">
         <NewCollaborator />
-      </AuthenticatedRoute>
-      <AuthenticatedRoute exact path="/collaborators/show">
-        <ShowCollaborationId />
       </AuthenticatedRoute>
       {/* Finally, catch all unmatched routes */}
       <Route>
