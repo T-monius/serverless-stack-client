@@ -118,6 +118,25 @@ export default function NewCollaborator() {
           Become a Collaborator
         </h3>
         <p>
+          Becoming a collaborator is as easy as providing your 'collaborator id' to
+          another user of the notes application. They will add your 'collaborator id'
+          on their own 'Collaboration' page, and your notes will then be available to
+          them.
+        </p>
+        <p>
+          For the time being, becoming a collaborator is irreversible, and any changes
+          your collaborator makes to your notes will be as if you yourself had made them.
+          Future improvements to this app will allow users to dictate what permission
+          their collaborators have in regards notes they did not create. For now, enjoy
+          the limitless collaboration currently allowed!
+        </p>
+        <h3>
+          Get Your Own Collaborator Id
+        </h3>
+        <p>
+          To get your own 'collaborator id', type the word yes in the box below (under
+          this subheading). Your 'collaborator id' will appear. Provide the 'id' to your
+          future collaborator, and they'll input you as described above.
         </p>
         <div>
           {collaborationId ? (
