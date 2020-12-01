@@ -49,6 +49,8 @@ export default function Home() {
             onError(e);
           }
         });
+
+        setIsSubscribed(true);
       }
     }
 
