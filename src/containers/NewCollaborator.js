@@ -77,8 +77,8 @@ export default function NewCollaborator() {
       <p>
         Real-Time collaboration means that if you are on the home page, and one of your
         collaborators adds or deletes a note, you'll see that note appear or disappear
-        <strong>without</strong> having to reload your page. The change will happen
-        <strong>right before your very eyes!</strong>
+         <strong>without</strong> having to reload your page. The change will happen
+         <strong>right before your very eyes!</strong>
       </p>
       <div>
         <h3>
@@ -127,8 +127,8 @@ export default function NewCollaborator() {
           For the time being, becoming a collaborator is irreversible, and any changes
           your collaborator makes to your notes will be as if you yourself had made them.
           Future improvements to this app will allow users to dictate what permission
-          their collaborators have in regards notes they did not create. For now, enjoy
-          the limitless collaboration currently allowed!
+          their collaborators have regarding notes they did not create. For now, enjoy
+          the limitless collaboration!
         </p>
         <h3>
           Get Your Own Collaborator Id
