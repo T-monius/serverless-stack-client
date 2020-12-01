@@ -7,10 +7,10 @@ import LoaderButton from "../components/LoaderButton";
 
 export default function NewCollaborator() {
   const history = useHistory();
-  const [content, setContent] = useState("");
+  const [collaboratorInput, setCollaboratorInput] = useState("");
 
   function validateForm() {
-    return content.length > 0;
+    return collaboratorInput.length > 0;
   }
 
   function createCollaborator(collaboratorId) {
@@ -25,7 +25,7 @@ export default function NewCollaborator() {
     event.preventDefault();
 
     try {
-      await createCollaborator(content);
+      await createCollaborator(collaboratorInput);
       history.push("/");
     } catch (e) {
       onError(e);
@@ -67,8 +67,8 @@ export default function NewCollaborator() {
         <Form.Group controlId="content">
           <Form.Control
             type="input"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
+            value={collaboratorInput}
+            onChange={(e) => setCollaboratorInput(e.target.value)}
           />
         </Form.Group>
         <LoaderButton
