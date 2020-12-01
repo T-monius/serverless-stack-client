@@ -8,7 +8,7 @@ import NewNote from "./containers/NewNote";
 import Notes from "./containers/Notes";
 import Settings from "./containers/Settings";
 import NewCollaborator from "./containers/NewCollaborator";
-import ShowCollaborationId from "./containers/ShowCollaborationId";
+// import ShowCollaborationId from "./containers/ShowCollaborationId";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
