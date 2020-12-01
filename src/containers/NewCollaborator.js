@@ -161,7 +161,7 @@ export default function NewCollaborator() {
                 </LoaderButton>
               </Form>)}
         </div>
-      <div>
+      </div>
     </div>
   );
 }
