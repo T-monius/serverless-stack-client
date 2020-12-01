@@ -146,6 +146,7 @@ export default function NewCollaborator() {
                 <Form.Group controlId="content">
                   <Form.Control
                     type="input"
+                    placeholder="yes"
                     value={confirmationInput}
                     onChange={(e) => setConfirmationInput(e.target.value)}
                   />
