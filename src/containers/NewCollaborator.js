@@ -8,6 +8,8 @@ import LoaderButton from "../components/LoaderButton";
 export default function NewCollaborator() {
   const history = useHistory();
   const [collaboratorInput, setCollaboratorInput] = useState("");
+  const [confirmationInput, setConfirmationInput] = useState("");
+  const [collaborationId, setCollaborationId] = useState("");
 
   function validateAddCollaboratorForm() {
     return collaboratorInput.length > 0;
@@ -30,6 +32,29 @@ export default function NewCollaborator() {
     } catch (e) {
       onError(e);
     }
+  }
+
+  function validateGetIdForm() {
+    return /yes/i.test(confirmationInput);
+  }
+
+  function getCollaborationId() {
+    return API.get("notes", "/collaborators", {
+      body: "",
+    });
+  }
+
+  async function handleConfirmationSubmit(event) {
+    event.preventDefault();
+    let retrievedId;
+
+    try {
+      retrievedId = await getCollaborationId();
+    } catch (e) {
+      onError(e);
+    }
+
+    setCollaborationId(retrievedId)
   }
 
   return (
@@ -55,37 +80,69 @@ export default function NewCollaborator() {
         <strong>without</strong> having to reload your page. The change will happen
         <strong>right before your very eyes!</strong>
       </p>
-      <h3>
-        Add a collaborator
-      </h3>
-      <p>
-        If you'd like to add a collaborator, request from your collaborator their
-        'collaborator id'. Once your collaborator has provided the 'collaborator id',
-        Input it in the input box below (under this same subheading, not the next
-        subheading).
-      </p>
-      <p>
-        If someone requests a 'collaborator id' from you, or you'd like to
-        know how your collaborator get's theirs, read the following section.
-      </p>
-      <Form onSubmit={handleNewCollaboratorSubmit}>
-        <Form.Group controlId="content">
-          <Form.Control
-            type="input"
-            value={collaboratorInput}
-            onChange={(e) => setCollaboratorInput(e.target.value)}
-          />
-        </Form.Group>
-        <LoaderButton
-          block
-          size="lg"
-          type="submit"
-          isLoading={false}
-          disabled={!validateAddCollaboratorForm()}
-        >
-          Save
-        </LoaderButton>
-      </Form>
+      <div>
+        <h3>
+          Add a collaborator
+        </h3>
+        <p>
+          If you'd like to add a collaborator, request from your collaborator their
+          'collaborator id'. Once your collaborator has provided the 'collaborator id',
+          Input it in the input box below (under this same subheading, not the next
+          subheading).
+        </p>
+        <p>
+          If someone requests a 'collaborator id' from you, or you'd like to
+          know how your collaborator get's theirs, read the following section.
+        </p>
+        <Form onSubmit={handleNewCollaboratorSubmit}>
+          <Form.Group controlId="content">
+            <Form.Control
+              type="input"
+              value={collaboratorInput}
+              onChange={(e) => setCollaboratorInput(e.target.value)}
+            />
+          </Form.Group>
+          <LoaderButton
+            block
+            size="lg"
+            type="submit"
+            isLoading={false}
+            disabled={!validateAddCollaboratorForm()}
+          >
+            Save
+          </LoaderButton>
+        </Form>
+      </div>
+      <div>
+        <h3>
+          Become a Collaborator
+        </h3>
+        <p>
+        </p>
+        <div>
+          {collaborationId ? (
+              <p>{collaborationId}</p>
+            ) :
+              (<Form onSubmit={handleConfirmationSubmit}>
+                <Form.Group controlId="content">
+                  <Form.Control
+                    type="input"
+                    value={confirmationInput}
+                    onChange={(e) => setConfirmationInput(e.target.value)}
+                  />
+                </Form.Group>
+                <LoaderButton
+                  block
+                  size="lg"
+                  type="submit"
+                  isLoading={false}
+                  disabled={!validateGetIdForm()}
+                >
+                  Save
+                </LoaderButton>
+              </Form>)}
+        </div>
+      <div>
     </div>
   );
 }
