@@ -37,7 +37,7 @@ export default function Home() {
   useEffect(() => {
     const pushEvent = () => {
       if (!isSubscribed) {
-        const Pusher = new Pusher('71006dcae7db25deafa6', {
+        const pusher = new Pusher('71006dcae7db25deafa6', {
           cluster: 'us2'
         });
         const channel = pusher.subscribe('my-channel');
