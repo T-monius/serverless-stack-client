@@ -7,11 +7,13 @@ import { onError } from "../libs/errorLib";
 import "./Home.css";
 import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
+import Pusher from "pusher-js";
 
 export default function Home() {
   const [notes, setNotes] = useState([]);
   const { isAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(true);
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
     async function onLoad() {
@@ -31,6 +33,29 @@ export default function Home() {
 
     onLoad();
   }, [isAuthenticated]);
+
+  useEffect(() => {
+    const pushEvent = () => {
+      if (!isSubscribed) {
+        const pusher = new Pusher('71006dcae7db25deafa6', {
+          cluster: 'us2'
+        });
+        const channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', async function(data) {
+          try {
+            const notes = await loadNotes();
+            setNotes(notes);
+          } catch (e) {
+            onError(e);
+          }
+        });
+
+        setIsSubscribed(true);
+      }
+    }
+
+    pushEvent();
+  }, [isSubscribed, notes])
 
   function loadNotes() {
     return API.get("notes", "/notes");
