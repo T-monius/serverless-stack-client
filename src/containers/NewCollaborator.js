@@ -9,7 +9,7 @@ export default function NewCollaborator() {
   const history = useHistory();
   const [collaboratorInput, setCollaboratorInput] = useState("");
 
-  function validateForm() {
+  function validateAddCollaboratorForm() {
     return collaboratorInput.length > 0;
   }
 
@@ -21,7 +21,7 @@ export default function NewCollaborator() {
     });
   }
 
-  async function handleSubmit(event) {
+  async function handleNewCollaboratorSubmit(event) {
     event.preventDefault();
 
     try {
@@ -61,9 +61,14 @@ export default function NewCollaborator() {
       <p>
         If you'd like to add a collaborator, request from your collaborator their
         'collaborator id'. Once your collaborator has provided the 'collaborator id',
-        Input it in the form below (under this same subheading).
+        Input it in the input box below (under this same subheading, not the next
+        subheading).
       </p>
-      <Form onSubmit={handleSubmit}>
+      <p>
+        If someone requests a 'collaborator id' from you, or you'd like to
+        know how your collaborator get's theirs, read the following section.
+      </p>
+      <Form onSubmit={handleNewCollaboratorSubmit}>
         <Form.Group controlId="content">
           <Form.Control
             type="input"
@@ -76,7 +81,7 @@ export default function NewCollaborator() {
           size="lg"
           type="submit"
           isLoading={false}
-          disabled={!validateForm()}
+          disabled={!validateAddCollaboratorForm()}
         >
           Save
         </LoaderButton>
