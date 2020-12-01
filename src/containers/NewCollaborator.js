@@ -77,8 +77,8 @@ export default function NewCollaborator() {
       <p>
         Real-Time collaboration means that if you are on the home page, and one of your
         collaborators adds or deletes a note, you'll see that note appear or disappear
-         <strong>without</strong> having to reload your page. The change will happen
-         <strong>right before your very eyes!</strong>
+        <strong> without</strong> having to reload your page. The change will happen
+        <strong> right before your very eyes!</strong>
       </p>
       <div>
         <h3>
