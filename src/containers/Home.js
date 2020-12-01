@@ -35,13 +35,13 @@ export default function Home() {
   }, [isAuthenticated]);
 
   useEffect(() => {
-    const pushEvent = async () => {
+    const pushEvent = () => {
       if (!isSubscribed) {
         const Pusher = new Pusher('71006dcae7db25deafa6', {
           cluster: 'us2'
         });
         const channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(data) {
+        channel.bind('my-event', async function(data) {
           try {
             const notes = await loadNotes();
             setNotes(notes);
