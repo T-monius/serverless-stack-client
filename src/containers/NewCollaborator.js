@@ -34,6 +34,35 @@ export default function NewCollaborator() {
 
   return (
     <div>
+      <h2>
+        Real-Time Collaboration
+      </h2>
+      <p>
+        Collaboration in this application allows for users to view, update, and delete
+        not only notes that they create on their own account but notes created by
+        collaborators in the collaborator's account as well.
+      </p>
+      <p>
+        All of a user's notes appear on the home page, and when a collaborator is added,
+        your collaborators notes will appear on your home page amongst your own notes.
+      </p>
+      <h3>
+        What's the deal with Real-Time?
+      </h3>
+      <p>
+        Real-Time collaboration means that if you are on the home page, and one of your
+        collaborators adds or deletes a note, you'll see that note appear or disappear
+        without having to reload your page. The change will happen right before your
+        very eyes!
+      </p>
+      <h3>
+        Add a collaborator
+      </h3>
+      <p>
+        If you'd like to add a collaborator, request from your collaborator their
+        'collaborator id'. Once your collaborator has provided the 'collaborator id',
+        Input it in the form below (under this same subheading).
+      </p>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="content">
           <Form.Control
