@@ -17,25 +17,6 @@ const dev = {
   }
 };
 
-// real-time-1 branch dev
-// const dev = {
-//   STRIPE_KEY: "pk_test_51HnWH2JO5lOn2hKWd8ucXizNL6w9atrnHSFNjcJ6iYFwQtJuG7Sa8S9QcAM1gF6cBxdCohSziow957Ngnbxstnzu00WgwsEVqv",
-//   s3: {
-//     REGION: "us-east-1",
-//     BUCKET: "real-time-1-notes-infra-s3-uploads4f6eb0fd-euia6oo1zfae"
-//   },
-//   apiGateway: {
-//     REGION: "us-east-1",
-//     URL: "https://hhonc5xmr6.execute-api.us-east-1.amazonaws.com/real-time-1"
-//   },
-//   cognito: {
-//     REGION: "us-east-1",
-//     USER_POOL_ID: "us-east-1_2P2AQcvvt",
-//     APP_CLIENT_ID: "536qmpgk03k817lkr5gnidi3cm",
-//     IDENTITY_POOL_ID: "us-east-1:2a2f8ab3-f725-443b-ab28-d38b11cdadc3"
-//   }
-// };
-
 const prod = {
   STRIPE_KEY: "pk_test_51HnWH2JO5lOn2hKWd8ucXizNL6w9atrnHSFNjcJ6iYFwQtJuG7Sa8S9QcAM1gF6cBxdCohSziow957Ngnbxstnzu00WgwsEVqv",
   s3: {
